@@ -13,6 +13,7 @@ class StoryCharts:
 
     def _plot(self, x, y, colors = "#0c4a6e", **label_kwargs):
         self.fig, self.ax = plt.subplots()
+        plt.show()
         
 
     def Line(self, x, y):
@@ -23,9 +24,12 @@ class StoryCharts:
 # as __name__ will be "story_charts.py" when imported
 if __name__ == "__main__": 
     print("\n\n")
-    print(DATA_PATH)
-    print(__name__)
+    #print(DATA_PATH)
+    #print(__name__)
 
     df = pd.read_csv(DATA_PATH / "co2_annmean_mlo.csv", skiprows=43)
 
     print(df.head())
+
+    sc = StoryCharts()
+    sc._plot(2,3)
